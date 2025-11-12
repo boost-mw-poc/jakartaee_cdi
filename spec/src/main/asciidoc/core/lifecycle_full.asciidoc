@@ -32,6 +32,7 @@ When the container invokes a method of a bean, the invocation may or may not be 
 * Invocation of lifecycle callbacks by the container are not business method invocations, but are intercepted by interceptors for lifecycle callbacks.
 * Invocations of interceptors and decorator methods during method or lifecycle callback interception are not business method invocations, and therefore no recursive interception occurs.
 * Invocations of methods declared by `java.lang.Object` are not business method invocations.
+* Invocations of `AutoCloseable.close()` on auto-closeable beans during destruction are not business method invocations.
 
 A method invocation passes through method interceptors and decorators if, and only if, it is a business method invocation.
 
